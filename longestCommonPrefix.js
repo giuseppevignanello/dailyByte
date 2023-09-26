@@ -5,20 +5,13 @@
 function longestCommonPrefix(arrayOfStrings) {
   let prefix = "";
   let arrayOfChars = [];
-  let stringAsArrayArray = [];
-  let minLength = 1000;
-
-  arrayOfStrings.forEach((string) => {
-    if (string.length < minLength) {
-      minLength = string.length;
-    }
-    stringAsArray = string.split("");
-    stringAsArrayArray.push(stringAsArray);
-  });
+  let minLength = arrayOfStrings.reduce(function (a, b) {
+    return a.length <= b.length ? a : b;
+  }).length;
 
   for (let i = 0; i < minLength; i++) {
-    stringAsArrayArray.forEach((stringAsArray) => {
-      arrayOfChars.push(stringAsArray[i]);
+    arrayOfStrings.forEach((string) => {
+      arrayOfChars.push(string[i]);
     });
 
     if (arrayOfChars.every((val) => val === arrayOfChars[0])) {
@@ -30,4 +23,4 @@ function longestCommonPrefix(arrayOfStrings) {
   return prefix;
 }
 
-console.log(longestCommonPrefix(["colorado", "color", "col"]));
+console.log(longestCommonPrefix(["colorado", "color", "colo"]));
