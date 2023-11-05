@@ -6,11 +6,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MergedLinkedLists {
 
-	public static List<Integer> mergedLinkedLists(int[] list1, int[] list2) {
+	public static List<Integer> mergedLinkedLists(LinkedList<Integer> list1, LinkedList<Integer> list2) {
 		
 		List<Integer> result = new ArrayList<>();
 		
@@ -21,11 +22,10 @@ public class MergedLinkedLists {
 			result.add(integer);
 		}
 		
-		List<Integer> orderedResult = new ArrayList<>();
 		
-		bubbleSort(result);
+		//bubbleSort(result);
 	
-		//Collections.sort(result);
+		Collections.sort(result);
 		
 		
 		return result;
@@ -60,14 +60,14 @@ public class MergedLinkedLists {
 	
 	public static void main(String[] args) {
 		
-		int[] list1 = {1, 2, 3}; 
-		int[] list2 = {4, 5, 6}; 
 		
-		int[] list3 = {1, 3, 5}; 
-		int[] list4 = {2, 4, 6}; 
+		LinkedList<Integer> list1 = new LinkedList<Integer>(List.of(1, 2, 3));
+		LinkedList<Integer> list2 = new LinkedList<Integer>(List.of(4, 5, 6));
+		LinkedList<Integer> list3 = new LinkedList<Integer>(List.of(1, 3, 5));
+		LinkedList<Integer> list4 = new LinkedList<Integer>(List.of(2, 4, 5));
+		LinkedList<Integer> list5 = new LinkedList<Integer>(List.of(4, 4, 7));
+		LinkedList<Integer> list6 = new LinkedList<Integer>(List.of(1, 5, 6));
 		
-		int[] list5 = {4, 4, 7}; 
-		int[] list6 = {1, 5, 6};
 		System.out.println(mergedLinkedLists(list1, list2));
 		System.out.println(mergedLinkedLists(list3, list4));
 		System.out.println(mergedLinkedLists(list5, list6));

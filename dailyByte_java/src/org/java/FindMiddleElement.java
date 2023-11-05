@@ -5,9 +5,6 @@
 
 package org.java;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class FindMiddleElement {
 
 	public static int findMiddleElement(int[] numbs) {
