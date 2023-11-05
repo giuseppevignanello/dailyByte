@@ -15,7 +15,7 @@ public class NthToLastNode {
 		int[] reversedList = new int [numbsList.length];
 		int[] finalListReversed = new int [numbsList.length - 1];
 		
-		//revers the list 
+		//reverse the list 
 		for (int i = numbsList.length - 1; i >= 0; i--) {
 			reversedList[numbsList.length - 1 - i] = numbsList[i];	
 		}
@@ -26,7 +26,6 @@ public class NthToLastNode {
 				finalListReversed[j] = reversedList[i];
 				j++;
 			}
-			
 		}
 		
 		//reverse again
