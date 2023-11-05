@@ -4,32 +4,31 @@
 package org.java;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ContainsCycle {
 
-	public static boolean containsCycle(int[]numbs) {
+	public static boolean containsCycle(LinkedList<Integer>numbs) {
 		
-		//trying with List and contains 
-		//convert into List 
-		List<Integer> numbsList = new ArrayList<>(); 
-		for (int i : numbs) {
-			numbsList.add(i);
-		}
 		
-		List<Integer> controlList = new ArrayList<>(); 
+		LinkedList<Integer> controlList = new LinkedList<>(); 
 		
-		for (Integer integer : numbsList) {
-			
+		for (Integer integer : numbs) {
+			if(controlList.contains(integer)) {
+				return true;
+			}
+			controlList.add(integer);
 		}
 		
 		return false;
 		
 	}
 	public static void main(String[] args) {
-		int[] numbs1 = {1, 2, 3, 1};
-		int[] numbs2 = {1, 2, 3}; 
-		int[] numbs3 = {1, 1};
+		LinkedList<Integer> numbs1 = new LinkedList<>(List.of(1, 2, 3, 1));
+		LinkedList<Integer> numbs2 = new LinkedList<>(List.of(1, 2, 3));
+		LinkedList<Integer> numbs3 = new LinkedList<>(List.of(1, 1));
+		
 		
 		System.out.println(containsCycle(numbs1));
 		System.out.println(containsCycle(numbs2));
