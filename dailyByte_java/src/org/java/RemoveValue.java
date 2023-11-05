@@ -42,8 +42,8 @@ public class RemoveValue {
 		}
 		
 		
-		return numbsList;
 		
+		return numbsList;
 		
 	}
 	public static void main(String[] args) {
